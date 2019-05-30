@@ -10,3 +10,8 @@ Icon getLikeIconForColor(ColorWithLike color) {
         )
       : Icon(Icons.favorite_border, color: Colors.red);
 }
+
+Color hexToColor(String code) {
+  print('code = $code');
+  return Color(int.parse(code.substring(0, 6), radix: 16) + 0xFF000000);
+}

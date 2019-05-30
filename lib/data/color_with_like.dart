@@ -8,7 +8,7 @@ class ColorWithLike {
     isLiked ??= false;
   }
 
-  static convertFromListColors(List<Color> inColors) {
-    return inColors.map((inColor) => ColorWithLike(color: inColor));
+  static List<ColorWithLike> convertFromListColors(List<Color> inColors) {
+    return inColors.map((inColor) => ColorWithLike(color: inColor)).toList();
   }
 }
