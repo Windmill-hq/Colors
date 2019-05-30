@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kotlin_night_2019_app/data/color_with_like.dart';
-
-import '../utils.dart';
+import 'package:kotlin_night_2019_app/widgets/widgets.dart';
 
 class DetailScreen extends StatefulWidget {
   final ColorWithLike color;
@@ -19,14 +18,7 @@ class _DetailScreenState extends State<DetailScreen> {
         appBar: AppBar(
           title: Text("Detail color"),
           actions: <Widget>[
-            IconButton(
-              icon: getLikeIconForColor(widget.color),
-              onPressed: () {
-                setState(() {
-                  widget.color.isLiked = !widget.color.isLiked;
-                });
-              },
-            )
+            LikeButton(color: widget.color),
           ],
         ),
         body: Container(color: widget.color.color));

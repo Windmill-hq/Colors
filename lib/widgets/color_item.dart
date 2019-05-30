@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kotlin_night_2019_app/data/color_with_like.dart';
-
-import '../utils.dart';
+import 'package:kotlin_night_2019_app/widgets/widgets.dart';
 
 class ColorItem extends StatefulWidget {
   final ColorWithLike colorWithLike;
@@ -20,16 +19,10 @@ class _ColorItemState extends State<ColorItem> {
       height: 100,
       color: widget.colorWithLike.color,
       child: Align(
-        alignment: Alignment.centerRight,
-        child: IconButton(
-          icon: getLikeIconForColor(widget.colorWithLike),
-          onPressed: () {
-            setState(() {
-              widget.colorWithLike.isLiked = !widget.colorWithLike.isLiked;
-            });
-          },
-        ),
-      ),
+          alignment: Alignment.centerRight,
+          child: LikeButton(
+            color: widget.colorWithLike,
+          )),
     );
   }
 }
